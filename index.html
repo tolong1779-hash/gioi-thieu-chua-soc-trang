@@ -1321,36 +1321,241 @@ footer p {
 
     <div class="footer-bottom">
         © 2026 – WEBSITE GIỚI THIỆU VĂN HÓA SÓC TRĂNG
-    </div>
-    </head>
+    <html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f2e9;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #492711;
+        }
+
+        .top-bar {
+            width: 78.5%;
+            height: 15px;
+            background-color: #102f28;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .header .small-title {
+            color: #d49b48;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 54px;
+            margin-bottom: 30px;
+        }
+
+        .header .subtitle {
+            font-family: Arial, sans-serif;
+            color: #64748b;
+            font-size: 17px;
+        }
+
+        .login-container {
+            width: 550px;
+            max-width: 92%;
+            background-color: #ffffff;
+            margin: 36px auto;
+            padding: 57px 50px 50px;
+            border-radius: 22px;
+        }
+
+        .login-container h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #492711;
+        }
+
+        .description {
+            font-size: 17px;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 13px;
+            color: #1e293b;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 56px;
+            padding: 0 20px;
+            border: 1px solid #d9e1ed;
+            border-radius: 13px;
+            outline: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: #334155;
+            transition: 0.3s;
+        }
+
+        .form-group input::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-group input:focus {
+            border-color: #d5a04f;
+            box-shadow: 0 0 5px rgba(213, 160, 79, 0.2);
+        }
+
+        .login-button {
+            width: 100%;
+            height: 60px;
+            background-color: #d6a451;
+            border: none;
+            border-radius: 40px;
+            color: #321b08;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #c58d39;
+            transform: translateY(-2px);
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .top-bar {
+                width: 90%;
+            }
+
+            .header h1 {
+                font-size: 42px;
+            }
+
+            .header .small-title {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .login-container {
+                padding: 40px 25px;
+            }
+
+            .login-container h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
 <body>
 
+    <div class="top-bar"></div>
+
     <div class="header">
-        <div class="sub-title">BẠN CÓ CÂU HỎI CẦN ĐƯỢC GIẢI ĐÁP?</div>
+        <p class="small-title">
+            BẠN CÓ CÂU HỎI CẦN ĐƯỢC GIẢI ĐÁP?
+        </p>
+
         <h1>Đăng nhập</h1>
-        <p class="desc">HÃY LIÊN HỆ VỚI CHÚNG TÔI</p>
+
+        <p class="subtitle">
+            HÃY LIÊN HỆ VỚI CHÚNG TÔI
+        </p>
     </div>
 
-    <div class="login-card">
-        <h2>Chào bạn!</h2>
-        <p class="sub-text">Điền thông tin để tiếp tục.</p>
+    <div class="login-container">
 
-        <form action="#" method="POST">
+        <h2>Chào bạn!</h2>
+
+        <p class="description">
+            Điền thông tin để tiếp tục.
+        </p>
+
+        <form id="loginForm">
+
             <div class="form-group">
                 <label for="email">Địa chỉ email</label>
-                <input type="email" id="email" placeholder="ban@example.com" required>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="ban@example.com"
+                    required
+                >
             </div>
 
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
-                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Nhập mật khẩu"
+                    required
+                >
             </div>
 
-            <button type="submit" class="btn-submit">Đăng nhập</button>
+            <button type="submit" class="login-button">
+                Đăng nhập
+            </button>
+
+            <p class="message" id="message"></p>
+
         </form>
+
     </div>
 
+    <script>
+        document.getElementById("loginForm")
+        .addEventListener("submit", function(event) {
 
+            event.preventDefault();
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (email && password) {
+                document.getElementById("message").innerText =
+                    "Bạn đã nhập đầy đủ thông tin!";
+                document.getElementById("message").style.color = "green";
+            }
+
+        });
+    </script>
+
+</body>
+</html>
 </footer>
 
 <!-- NÚT TRỞ VỀ ĐẦU TRANG -->
